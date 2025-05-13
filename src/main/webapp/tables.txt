@@ -1,0 +1,267 @@
+MySQL 8:
+-------
+create table jobs
+(
+	id int auto_increment,
+	job_profile varchar(100),
+	company varchar(100),
+	experience varchar(100), 
+    salary varchar(100),
+    no_of_openings varchar(100),
+    job_location varchar(100),
+    time_venue varchar(100),
+    description varchar(3000), 
+    c_email varchar(100),
+    c_person_name varchar(100),
+    c_person_profile varchar(100),
+    c_phone_no varchar(100),
+    date1 varchar(100), 
+    time1 varchar(100),
+    primary key(id)
+);
+
+
+create table company_reg
+(
+	id int auto_increment,
+	c_name varchar(100),
+	c_email varchar(100), 
+	c_password varchar(100), 
+	c_logo varchar(100), 
+	c_phoneno varchar(15), 
+	primary key(id)
+);
+
+
+create table education
+(
+	id int auto_increment, 
+	email varchar(100), 
+	school varchar(100), 
+	degree varchar(100), 
+	year varchar(10), 
+	grade varchar(10), 
+	description varchar(3000), 
+	primary key(id)
+);
+
+
+create table applied_jobs
+(
+	id int auto_increment, 
+	email varchar(100), 
+	jobid varchar(100), 
+	date1 varchar(100), 
+	time1 varchar(100), 
+	primary key(id)
+);
+
+
+create table contact_us
+(
+	id int auto_increment,
+	name varchar(100), 
+	email varchar(100), 
+	subject varchar(200), 
+	message varchar(500), 
+	date1 varchar(100),
+ 	time1 varchar(100), 
+ 	primary key(id)
+);
+
+
+CREATE TABLE register 
+(
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(20) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    fields VARCHAR(200),
+    city VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+create table about_user
+(
+	id int auto_increment, 
+	email varchar(100) unique, 
+	about varchar(100), 
+	skills varchar(100), 
+	primary key(id)
+);
+
+
+create table profile_pics
+(
+	id int auto_increment,
+	email varchar(100), 
+	path varchar(100), 
+	primary key(id)
+);
+
+
+CREATE TABLE resumes
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    path VARCHAR(1000)
+);
+
+
+CREATE TABLE experience 
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    company VARCHAR(100),
+    location VARCHAR(50),
+    year VARCHAR(40),
+    job_title VARCHAR(100),
+    description VARCHAR(3000)
+);
+
+
+Oracle 21C:
+----------
+CREATE TABLE jobs (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    job_profile VARCHAR2(100),
+    company VARCHAR2(100),
+    experience VARCHAR2(100),
+    salary VARCHAR2(100),
+    no_of_openings VARCHAR2(100),
+    job_location VARCHAR2(100),
+    time_venue VARCHAR2(100),
+    description VARCHAR2(3000),
+    c_email VARCHAR2(100),
+    c_person_name VARCHAR2(100),
+    c_person_profile VARCHAR2(100),
+    c_phone_no VARCHAR2(100),
+    date1 VARCHAR2(100),
+    time1 VARCHAR2(100)
+);
+
+CREATE TABLE company_reg (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    c_name VARCHAR2(100),
+    c_email VARCHAR2(100),
+    c_password VARCHAR2(100),
+    c_logo VARCHAR2(100),
+    c_phoneno VARCHAR2(15)
+);
+
+CREATE TABLE education (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100),
+    school VARCHAR2(100),
+    degree VARCHAR2(100),
+    year VARCHAR2(10),
+    grade VARCHAR2(10),
+    description VARCHAR2(3000)
+);
+
+CREATE TABLE applied_jobs (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100),
+    jobid VARCHAR2(100),
+    date1 VARCHAR2(100),
+    time1 VARCHAR2(100)
+);
+
+CREATE TABLE contact_us (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR2(100),
+    email VARCHAR2(100),
+    subject VARCHAR2(200),
+    message VARCHAR2(500),
+    date1 VARCHAR2(100),
+    time1 VARCHAR2(100)
+);
+
+CREATE TABLE register (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR2(50) NOT NULL,
+    email VARCHAR2(100) NOT NULL UNIQUE,
+    password VARCHAR2(20) NOT NULL,
+    gender VARCHAR2(10) NOT NULL,
+    fields VARCHAR2(200),
+    city VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE about_user (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100) UNIQUE,
+    about VARCHAR2(100),
+    skills VARCHAR2(100)
+);
+
+CREATE TABLE profile_pics (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100),
+    path VARCHAR2(100)
+);
+
+CREATE TABLE resumes (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100),
+    path VARCHAR2(1000)
+);
+
+CREATE TABLE experience (
+    id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR2(100),
+    company VARCHAR2(100),
+    location VARCHAR2(50),
+    year VARCHAR2(40),
+    job_title VARCHAR2(100),
+    description VARCHAR2(3000)
+);
+
+INSERT INTO about_user (email, about, skills) VALUES ('sadak8306@gmail.com', 'Full Stack JAVA Developer', 'C, JAVA, JSP, Servlet,');
+INSERT INTO about_user (email, about, skills) VALUES ('shreyosidutta1@gmail.com', 'Full Stack JAVA Developer', 'C, C++, JAVA, Python');
+
+INSERT INTO applied_jobs (email, jobid, date1, time1) VALUES ('sadak8306@gmail.com', '2', '13-10-2024', '12:13:43');
+INSERT INTO applied_jobs (email, jobid, date1, time1) VALUES ('shreyosidutta1@gmail.com', '2', '14-10-2024', '17:31:47');
+
+INSERT INTO company_reg (c_name, c_email, c_password, c_logo, c_phoneno) VALUES ('Infosys', 'infosyscc@gmail.com', 'infosys@123', 'infosys.jpg', '7412589630');
+INSERT INTO company_reg (c_name, c_email, c_password, c_logo, c_phoneno) VALUES ('Wipro', 'wiproxxx@gmail.com', 'wipro@123', 'wipro.png', '1236547890');
+INSERT INTO company_reg (c_name, c_email, c_password, c_logo, c_phoneno) VALUES ('TCS', 'tcsxxx@gmail.com', 'tcs@123', 'TCS.png', '7539518206');
+
+INSERT INTO contact_us (name, email, subject, message, date1, time1) VALUES ('Soumyadeep Adak', 'sadak8306@gmail.com', 'Performance Issue', 'Web page not responding', '14-10-2024', '17:15:02');
+INSERT INTO contact_us (name, email, subject, message, date1, time1) VALUES ('Shreyosi Dutta', 'shreyosidutta1@gmail.com', 'Performance Issue', 'Web page not responding', '14-10-2024', '17:32:12');
+
+INSERT INTO education (email, school, degree, year, grade, description) VALUES ('sadak8306@gmail.com', 'St. Thomas'' College of Engineering and Technology', 'B. Tech', '2022-2026', '80', 'JAVA Certifications');
+INSERT INTO education (email, school, degree, year, grade, description) VALUES ('sadak8306@gmail.com', 'New Andul H.C. School', '12th', '2020-2022', '95.8', 'Science (PCM)');
+INSERT INTO education (email, school, degree, year, grade, description) VALUES ('shreyosidutta1@gmail.com', 'St. Thomas'' College of Engineering and Technology', 'B. Tech', '2022-2026', '80', 'JAVA Certifications');
+INSERT INTO education (email, school, degree, year, grade, description) VALUES ('shreyosidutta1@gmail.com', 'The Holy Child Girls'' High School', '12th', '2020-2022', '96', 'Math');
+
+INSERT INTO experience (email, company, location, year, job_title, description) VALUES ('sadak8306@gmail.com', 'NRIFT', 'Kolkata', '2026-2029', 'Jr. JAVA Developer', 'Oracle Certifications');
+INSERT INTO experience (email, company, location, year, job_title, description) VALUES ('sadak8306@gmail.com', 'Microsoft', 'Mumbai', '2029-2034', 'System Engineer', 'Linux Certifications');
+INSERT INTO experience (email, company, location, year, job_title, description) VALUES ('shreyosidutta1@gmail.com', 'NRIFT', 'Kolkata', '2026-2030', 'Jr. Java Developer', 'Oracle Certifications');
+
+INSERT INTO jobs (job_profile, company, experience, salary, no_of_openings, job_location, time_venue, description, c_email, c_person_name, c_person_profile, c_phone_no, date1, time1)
+VALUES (
+    'Java Developer', 'NRIFT', '0-5 years', '300000-500000 PA', '10', 'Kolkata',
+    '1st January, 2025, JW Mariot Hotel',
+    'Requires good knowledge of JSP, Servlet, JDBC, any framework like Spring and Hibernate, web services knowledge, have worked on live projects, have good knowledge of IBM Servers',
+    'nriftcc@gmail.com', 'Bhuppi', 'HR', '9876543210', '10-10-2024', '02:30:30'
+);
+INSERT INTO jobs (job_profile, company, experience, salary, no_of_openings, job_location, time_venue, description, c_email, c_person_name, c_person_profile, c_phone_no, date1, time1)
+VALUES (
+    'Android Developer', 'Infosys', '0-5 years', '500000-800000 PA', '60', 'Chennai',
+    '5th January, 2025, The Lalit Hotel',
+    'Requires good knowledge of Android with Firebase and MySQL database, have good knowledge of API',
+    'infosyscc@gmail.com', 'Ankita', 'HR', '9513746202', '12-10-2024', '04:38:40'
+);
+
+INSERT INTO profile_pics (email, path) VALUES ('sadak8306@gmail.com', 'Soumyadeep.jpeg');
+INSERT INTO profile_pics (email, path) VALUES ('shreyosidutta1@gmail.com', 'shreyosi.jpeg');
+
+INSERT INTO register (name, email, password, gender, fields, city) VALUES ('Soumyadeep Adak', 'sadak8306@gmail.com', 'adak@2004', 'Male', 'Information Technology,Finance', 'Chandigarh');
+INSERT INTO register (name, email, password, gender, fields, city) VALUES ('Shreyosi Dutta', 'shreyosidutta1@gmail.com', 'dutta@2004', 'Female', 'Information Technology,Finance', 'Chandigarh');
+
+INSERT INTO resumes (email, path) VALUES ('sadak8306@gmail.com', 'Soumyadeep Adak_RESUME.pdf');
+INSERT INTO resumes (email, path) VALUES ('shreyosidutta1@gmail.com', 'Soumyadeep Adak_RESUME.pdf');
+
+
